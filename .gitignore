@@ -1,2 +1,4 @@
 lastupdate.tmp
 /routers/commentsRouter*.go
+/goWebTest
+*.swp

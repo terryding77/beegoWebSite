@@ -9,7 +9,8 @@ type CommonController struct {
 	beego.Controller
 }
 
-func (cC *CommonController) Get() {
-	cC.Data["json"] = "Version: 1.2"
-	cC.ServeFormatted()
+// @router /version [get]
+func (cC *CommonController) GetVersion() {
+	cC.Data["json"] = "version: 1.32"
+	cC.ServeJSON()
 }

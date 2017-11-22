@@ -1,16 +1,16 @@
 package routers
 
 import (
-	"goWebTest/controllers"
-
 	"github.com/astaxie/beego"
+	"goWebTest/controllers"
 )
 
 func init() {
 	ns := beego.NewNamespace("/v1",
-		//beego.NSGet("/version", aaa),
 		beego.NSInclude(&controllers.CommonController{}),
-		//beego.Include(&commonController{}),
+		beego.NSNamespace("/user",
+			beego.NSInclude(&controllers.UserController{}),
+		),
 	)
 
 	beego.AddNamespace(ns)
